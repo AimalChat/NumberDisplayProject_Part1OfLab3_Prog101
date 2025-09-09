@@ -49,8 +49,6 @@ Note what is shown in the Terminal window. Repeatedly call the increment method
 until the value in the inspector rolls over to zero. (If you are feeling impatient, 
 you could always create a NumberDisplay object with a lower limit!)
 
-5b.
-
 6a.Create a second NumberDisplay object with a limit of 60, and give it the name 
 minutes. Call its increment method and note how the method calls are represented 
 in the Terminal window. Imagine that the hours and minutes objects on the object 
@@ -72,9 +70,6 @@ statement – telling the object to do something – while the call to getValue 
 not because it is asking the object to return a value (the call is an expression).
 Use the recorded method calls in the Terminal window to help you with the correct 
 way of writing these method calls.
-
-
-7b.
 
 8a.A call to setValue will need to include a numerical parameter value. Call the 
 setValue method on the display variable – you will need to include a semicolon at 
@@ -171,13 +166,15 @@ All are correct.
 16a.Write an expression using boolean variables a and b that evaluates to true 
 when a and b are either both true or both false.
 
-16b. if (a && b = true ││ a && b = false) = true;
+16b. a && b || !a && !b (other ways : a == b)
 
 17a.Write an expression using boolean variables a and b that evaluates to true 
 when only one of a and b is true, and that is false if a and b are both false 
 or both true. (This is also called an exclusive or.)
 
-17b.
+17b. a^b
+
+return true;
 
 18a.Does the getDisplayValue method work correctly in all circumstances? What 
 assumptions are made within it? What happens if you create a number display 
@@ -185,7 +182,11 @@ with limit 1000, for instance? Try this out: create a NumberDisplay object and
 call its setValue method with a three-digit value. What is returned from a 
 call to getDisplayValue? Is it a two-digit String?
 
-18b.
+18b.It seems to be the case, the string displayed a three digit number. Though,
+I think thats only the case if your inputted value is a positive integer number
+within the confines of the initialized limit. It assumes that the number displayed
+positive and corresponds to the windown within the limit. No, it is not a two-digit
+String.
 
 19a.Is there any difference in the result of writing
 return value + "";
@@ -193,7 +194,7 @@ rather than
 return "" + value;
 in the getDisplayValue method?
 
-19b.
+19b.No, there doesnt seem to be any change.
 
 20a.Predict, and then test, the result of these two expressions:
 9 + 3 + “cat”
@@ -201,4 +202,11 @@ and
 “cat” + 3 + 9
 Did they surprise you? Explain why the results are what they are.
 
-20b.
+20b.For the first one, it will return : 12cat
+For the 2nd one, it will return cat39.
+I think...I was correct!The reason I know this is because in game programming,
+we were told that if you start an additive operation with a Sring, the other things
+added will become part of said strings and act as as though it is a concatination of
+of strings rather than an addition with numbers. This is why it was cat39, since the
+String came first and 12cat, becasue it was treated as an addition before seeing the
+String that needed to be concatinated.
