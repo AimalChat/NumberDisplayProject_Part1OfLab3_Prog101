@@ -21,7 +21,7 @@ Imagine that we create a LabClass object and three Student objects. We then enro
 all three students in that lab. Try to draw a class diagram and an object diagram 
 for that situation. Identify and explain the differences between them.
 
-1b.
+1b.Photo of said diagram
 
 2a.At what time(s) can a class diagram change? How is it changed?
 
@@ -38,6 +38,19 @@ object of type Instructor.
 
 4b.private Instructor tutor;
 
+5a.Open the number-display project. Select Show Terminal from the View menu 
+and select Record method calls, as you did with the figures project in chapter 
+1. This will allow you to see the result of your interactions with objects, 
+which will be useful when we look in detail at the full clock-display project. 
+Now create a NumberDisplay object and give it the name hours, rather than using 
+the default name offered by BlueJ. Use a rollover limit of 24. Open an inspector
+window for this object. With the inspector open, call the object’s increment method. 
+Note what is shown in the Terminal window. Repeatedly call the increment method 
+until the value in the inspector rolls over to zero. (If you are feeling impatient, 
+you could always create a NumberDisplay object with a lower limit!)
+
+5b.
+
 6a.Create a second NumberDisplay object with a limit of 60, and give it the name 
 minutes. Call its increment method and note how the method calls are represented 
 in the Terminal window. Imagine that the hours and minutes objects on the object 
@@ -46,7 +59,8 @@ In effect, you are now performing the role of the ClockDisplay object. What
 should you do each time you call increment on minutes to decide whether it has 
 rolled over and whether increment should therefore be called on the hours object?
 
-6b.
+6b.Only when the value stored in the minutes numberDisplay rolls over, then it should
+increment the hours numberDisplay by 1.
 
 7a.Select the Show Code Pad from the View menu. Create a NumberDisplay object with 
 limit 6 in the Code Pad by typing :
