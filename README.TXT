@@ -128,36 +128,50 @@ Now repeat exercise 9. Make sure that you understand the reason for the differen
 between the two outcomes. Replace the “<=” operator with the original “<” operator 
 before continuing.
 
-12b.
+12b.If Im guessing correctly, it should now display the limit, so 10, since we 
+included into the accepted values we can display in the stored location. That
+assumption was correct.
 
 13a.What is the only valid parameter value that would no longer set the value field 
 if you replaced the “>=” operator in the test with “>” so that it reads 
 if((replacementValue > 0) && (replacementValue < limit)) 
 
-
-13b.
+13b. It is 0, since we exclude the value from being displayed, even though it is
+technically correct to display 0 on it.
 
 14a.What are some of the invalid parameter values that would now be able to set the 
 field if you replaced the && operator in the test with so that it reads ││
 if((replacementValue >= 0) (replacementValue < limit))
 
-14b.
+14b.It can be anything up following 10, even if 10 is our limit. We remove the extra
+condition of having the replacement value being within the confines of our limit, so
+now, we can put whatever value, that isnt in the negatives, in the display. 
 
 15a.Which of the following expressions return true?
-! (4 < 5)
-! false
-(2 > 2) ((4 == 4) && (1 < 0)) ││
-(2 > 2) (4 == 4) && (1 < 0) ││
-(34 != 33) && ! false
+1.! (4 < 5)
+2.! false
+3.(2 > 2) || ((4 == 4) && (1 < 0))
+4.(2 > 2) || (4 == 4) && (1 < 0) 
+5.(34 != 33) && ! false
 After writing your answers on paper, open the Code Pad in BlueJ and try it out.
 Check your answers.
 
-15b.
+15b.In Java, the ! operator is known as the logical NOT operator. It is used to invert 
+the value of a boolean expression. If the expression is true, applying the ! operator 
+will make it false, and vice versa. And ││ is known as the Logical OR operator,
+meaning it returns true if one of the statements is true, statement 1 ││ statement 2.
+So,
+1.False
+2.True
+3.False
+4.False
+5.True
+All are correct.
 
 16a.Write an expression using boolean variables a and b that evaluates to true 
 when a and b are either both true or both false.
 
-16b.
+16b. if (a && b = true ││ a && b = false) = true;
 
 17a.Write an expression using boolean variables a and b that evaluates to true 
 when only one of a and b is true, and that is false if a and b are both false 
@@ -185,6 +199,6 @@ in the getDisplayValue method?
 9 + 3 + “cat”
 and
 “cat” + 3 + 9
-Did they surprise you? Explain why the results are what they are
+Did they surprise you? Explain why the results are what they are.
 
 20b.
