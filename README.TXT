@@ -84,7 +84,9 @@ with a value greater than the limit (e.g., 10) and check the result with a call
 to getValue. Did both calls to setValue result in a change to the stored value? 
 Can you explain the results?
 
-8b.
+8b.No, only the value under the limit changed the stored value. I believe it is due
+to the limit established when initiallizing the object. It could not accept the
+higher value because it wasnt a legitimate value to store in this case.
 
 9a.In the Code Pad, create a NumberDisplay object called digit with a rollover 
 limit of 10. Now call its setValue method with a value of 10. Predict what the 
@@ -94,7 +96,8 @@ understand how the rollover limit works with NumberDisplay objects. If you predi
 incorrectly, then review the previous sections and read on further to help to clarify 
 your understanding.
 
-9b.
+9b.It will be 0, since it rolls back once hitting the limit. 
+NumberDisplay digit = new NumberDisplay(10);
 
 10a.What error message you see in the Code Pad if you type the following?
 NumberDisplay.getValue()
@@ -105,16 +108,19 @@ to try to call the getValue method. Instead of the class name, we must use the
 variable name, such as display. We shall explore this error in more detail later in 
 this chapter.
 
-10b.
+10b.There is also the fact that there isnt a semi-colon at the end I believe.
 
 11a.What error message do you see in the Code Pad if you type the following?
 display.setValue(int 5);
-The error message is no actually very helpful at all. Can you work out what 
+The error message is not actually very helpful at all. Can you work out what 
 is incorrect about this call to setValue, and correct it? It would also be worth 
 remembering this error message because it results from an easy error to make in 
 the early stages of learning.
 
-11b.
+11b.display.setValue(5); The other spelling of the call is wrong since we are
+not trying to initialize the parameter for a class. By writng "int", we are 
+asking the program to specify a data type for a parameter when in actuality,
+we simply wish to call upon a method.
 
 12a.Replace the “<” operator in the setValue test with “<=” so that it reads
 if((replacementValue >= 0) && (replacementValue <= limit))
