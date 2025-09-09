@@ -45,7 +45,7 @@ public class NumberDisplay
             return "0" + value;
         }
         else {
-            return "" + value;
+            return value + "";
         }
     }
 
